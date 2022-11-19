@@ -2,15 +2,15 @@ package lesson2;
 
 public class NewTestForOurProject {
 
-    public void test(){
+    public static void test(String[] args){
         System.out.println("First test");
     }
 
-    public void test2(){
+    public static void test2(String[] args){
         System.out.println("Second test");
     }
 
-    public void test3(){
+    public static void test3(String[] args){
         System.out.println("Third test");
     }
 }
