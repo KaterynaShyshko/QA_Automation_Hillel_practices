@@ -8,5 +8,7 @@ public class Main {
         System.out.println("Our work with Git!");
 
         System.out.println("Third commit!");
+
+        System.out.println("Ho - Ho - Ho!");
     }
 }
