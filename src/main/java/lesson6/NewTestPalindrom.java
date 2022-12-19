@@ -2,7 +2,7 @@ package lesson6;
 
 public class NewTestPalindrom {
     public static void main(String[]  args){
-        String st = "3553";
+        String st = "3511253";
         StringBuffer buffer = new StringBuffer(st);
         buffer.reverse();
 

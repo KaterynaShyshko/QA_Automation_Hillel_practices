@@ -18,3 +18,16 @@ public class Palindrome {
                 }
         }
 }
+
+
+//case '/':
+//       if ((operand1 > 0)&&(operand2 > 0)) {
+//        result = operand1 / operand2;
+//        System.out.println(operand1 + " / " + operand2 + " = " + result);
+//        } else if ((operand1 < 0)&&(operand2 < 0)) {
+ //       result = operand1 / operand2;
+//       System.out.println(operand1 + " / " + operand2 + " = " + result);
+ //       } else {
+//        System.out.println("Can't divide by 0!");
+ //       }
+//        break;
