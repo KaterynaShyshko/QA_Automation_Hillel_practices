@@ -26,6 +26,8 @@ public class SumOfRowsInArray {
         System.out.print("]");
 
     }
+
+
     public static void sumRowArray(int[] arraySumOfRow){
         int sumRow = 0;
         for (int j = 0; j < arraySumOfRow.length; j++){
