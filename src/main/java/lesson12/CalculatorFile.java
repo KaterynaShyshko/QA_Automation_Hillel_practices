@@ -6,54 +6,53 @@ import java.io.*;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class CalculatorFile {
         public static void main(String[] args) throws IOException {
-            File file = new File("src/main/java/lesson12/file.txt");
-            List<String> list = Arrays.asList("-5", "PluS", "-5");
-            System.out.println();
-            System.out.println(file.toURI());
+         //   File file = new File("C:/Users/Family/Desktop/Tast_Automation/Projects/QA_TestAutomation_14_11_22_unit1/src/main/java/lesson12/file1.txt");
+          //  List<String> list = Arrays.asList("-5", "PluS", "-5");
 
+            List<String> list1 = Arrays.asList("-5\n", "PluS\n", "-5");
+            String str = list1.toString();
+            writeWithBufferedWriter(str);
 
-            Float result = Calculate(list);
-            String resultExpression= prepareResults(list,result);
-            System.out.println(resultExpression);
+            List<String> data = getDataFromFile("src/main/java/lesson12/file1.txt");
+            Float result3 = Calculate(getDataFromFile(data.toString()));
+            String resultExpression3= prepareResults(getDataFromFile(data.toString()),result3);
+            System.out.println(resultExpression3);
 
-            List<String> data = getDataFromFile("src/main/java/lesson12/file.txt");
-            //  String data1 = String.valueOf(data);
-           // Float result3 = Calculate(getDataFromFile(data1));
-          //  String resultExpression3= prepareResults(getDataFromFile(data1),result3);
-          //  System.out.println(resultExpression3);
-
-            System.out.println(readFileWithOperation(file) +" " +"= our txt");
             System.out.println();
             System.out.println(data);
         }
+    public static void writeWithBufferedWriter(String str) throws IOException {
+        File file1 = new File("src/main/java/lesson12", "file1.txt");
+        file1.createNewFile();
 
-        public static List<String> getDataFromFile(String relativeFilePath) throws IOException {
+        FileWriter fileWriter = new FileWriter(file1);
+        BufferedWriter  bufferedWriter = new BufferedWriter(fileWriter);
+        for (Character ch: str.toCharArray()){
+            bufferedWriter.append(ch);
+        }
+        bufferedWriter.flush();
+        bufferedWriter.close();
+    }
+
+
+    public static List<String> getDataFromFile(String relativeFilePath) throws IOException {
             File file = new File(relativeFilePath);
-            List<String> list = new ArrayList<>();
             FileReader fileReader = new FileReader(file);
             BufferedReader bufferedReader = new BufferedReader(fileReader);
-            String line = null;
-            while ((line = bufferedReader.readLine()) != null) {
-                list.add(line);
+            StringBuffer stringBuffer = new StringBuffer();
+            int ch;
+            while ((ch = bufferedReader.read()) != -1) {
+                stringBuffer.append((char) ch);
             }
-            bufferedReader.close();
-            return list;
-        }
+        List<String> list = Arrays.asList(stringBuffer.toString());
 
-        public static String readFileWithOperation(File file) throws IOException {
-             FileReader fileReader = new FileReader(file);
-             BufferedReader bufferedReader = new BufferedReader(fileReader);
-             StringBuffer stringBuffer = new StringBuffer();
-             int ch;
-             while ((ch = bufferedReader.read()) != -1) {
-                 stringBuffer.append((char) ch);
-             }
-             return stringBuffer.toString();
-        }
+        return list;
+    }
 
         public static Float Calculate(List<String> list) {
             Float operand1 = Float.valueOf(list.get(0));
