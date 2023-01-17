@@ -46,10 +46,6 @@ public class CalculatorEnum {
                     }
                     break;
                 default:
-                  //  if ((op1 == null) || (operand2 == null)){
-                   //     return null;
-                  //  }else { System.out.println("Invalid operator! Please, enter correct operator.");
-                    //  }
                  System.out.println("Invalid operator! Please, enter correct operator.");
                  break;
             }
