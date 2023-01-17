@@ -12,6 +12,8 @@ public class CalculatorFile {
         public static void main(String[] args) throws IOException {
             File file = new File("src/main/java/lesson12/file.txt");
             List<String> list = Arrays.asList("-5", "PluS", "-5");
+            System.out.println();
+            System.out.println(file.toURI());
 
 
             Float result = Calculate(list);
@@ -19,10 +21,10 @@ public class CalculatorFile {
             System.out.println(resultExpression);
 
             List<String> data = getDataFromFile("src/main/java/lesson12/file.txt");
-            String data1 = String.valueOf(data);
-            Float result3 = Calculate(getDataFromFile(data1));
-            String resultExpression3= prepareResults(getDataFromFile(data1),result3);
-            System.out.println(resultExpression3);
+            //  String data1 = String.valueOf(data);
+           // Float result3 = Calculate(getDataFromFile(data1));
+          //  String resultExpression3= prepareResults(getDataFromFile(data1),result3);
+          //  System.out.println(resultExpression3);
 
             System.out.println(readFileWithOperation(file) +" " +"= our txt");
             System.out.println();
